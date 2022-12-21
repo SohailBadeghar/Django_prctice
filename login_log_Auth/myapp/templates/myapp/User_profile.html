@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User_profile</title>
+</head>
+<body>
+    <h1>User_profile page</h1>
+    {% csrf_token %}
+
+    <h1>Welcome {{name}}</h1>
+    {% if messages %}
+    {% for msg in messages %}
+        <small {% if msg.tags %}Class="{{ msg.tags }}" {% endif %}> {{msg}} </small>
+    {% endfor %}
+    {% endif %} <br> <br>
+    <button><a href="{% url 'change_password' %}">Change Password</a> <br><br>
+    <button><a href="{% url 'change_new_password' %}">Change_New_Password</a> <br><br>
+    <button><a href="{% url 'user_logout' %}"> Logout</a>
+    </button>
+ 
+</body>
+</html>

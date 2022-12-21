@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User_profile</title>
+</head>
+<body>
+    {% csrf_token %}
+    <h1 style="text-align:center;">User_profile page</h1>
+    <hr>
+    <h1>Welcome {{name}}</h1>
+    {% if users != None %}
+        <h2>List of Users </h2>
+        {% for user in users %}
+           <a href="{% url 'user_details' user.id %}"><li>{{user.username}}</li></a> <br> <br>
+        {% endfor %}
+    {% endif %} <hr>
+
+    {% if messages %}
+    {% for msg in messages %}
+        <small {% if msg.tags %}Class="{{ msg.tags }}" {% endif %}> {{msg}} </small>
+    {% endfor %}
+    {% endif %} <br> <br>
+
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {% if forms.non_field_errors %}
+            {% for error in forms.non_field_errors %}
+                <p class="error">{{error}}</p>
+            {% endfor %}
+        {% endif %}
+        {% for fm in forms %}
+            {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+        {% endfor %}
+        <input type="submit" value="Save">
+    </form> <br> <br>
+    <button><a href="{% url 'change_password' %}">Change Password</a> <br><br>
+    <button><a href="{% url 'user_logout' %}"> Logout</a>
+    </button>
+
+ 
+</body>
+</html>

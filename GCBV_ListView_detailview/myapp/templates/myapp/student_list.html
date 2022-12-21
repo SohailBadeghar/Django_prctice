@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
+<body>
+    
+    <table>  
+       <!-- for the student -->
+        <!-- <tr>
+        <th>Name</th>
+        <th>Roll_No</th>
+        <th>Course</th>
+      </tr>
+    {% for stu in student_list %}
+      <tr>
+        <td>{{stu.name}}</td>
+        <td>{{stu.roll_no}}</td>
+        <td>{{stu.course}}</td>
+      </tr>
+      {% endfor %} -->
+
+       <!-- for the context_object_name -->
+        <!-- <tr>
+        <th>Name</th>
+        <th>Roll_No</th>
+        <th>Course</th>
+      </tr>
+    {% for stu in student %}
+      <tr>
+        <td>{{stu.name}}</td>
+        <td>{{stu.roll_no}}</td>
+        <td>{{stu.course}}</td>
+      </tr>
+      {% endfor %} -->
+
+  <!-- for the context_object_name -->
+      <!-- <tr>
+        <th>Name</th>
+        <th>Roll_No</th>
+        <th>Course</th>
+      </tr>
+    {% for stu in freshers %}
+      <tr>
+        <td>{{stu.name}}</td>
+        <td>{{stu.roll_no}}</td>
+        <td>{{stu.course}}</td>
+      </tr>
+      {% endfor %} -->
+
+
+    </table>
+
+    <!-- for detail View of the get single object information -->
+    <!-- {% for stu in student_list %}
+    <li><a href="{% url 'StudentDetailView' stu.id %}">{{stu.name}}</a> </li>        
+      {% endfor %} -->
+
+</body>
+</html>

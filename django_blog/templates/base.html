@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- start CSS -->
+    {% block css %}
+        {% include '_partials/_css.html' %}
+    {% endblock %}
+    <!-- end CSS -->
+    <title>{% block title%}Home{% endblock %}</title>
+  </head>
+  <body>
+    <div class="container">
+        {% block content %}
+            <p>Lorem</p>
+        {% endblock %}
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- block javascript -->
+    {% block javascript %}
+        {% include '_partials/_js.html' %}
+    {% endblock %}
+
+  </body>
+</html>

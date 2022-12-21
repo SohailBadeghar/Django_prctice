@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User_Registrations Form</title>
+</head>
+<body>
+ <!-- Using get Method Form -->
+    <!-- <form action="" method="GET">
+            <table>
+            {{form.as_table}}
+            </table>
+        <input type="submit"value="Submit"> 
+    </form> -->
+
+ <!-- Using POST Method Form -->
+ <!-- form takes bydefault html5 errors but we want djanago validation so we use "novalidate" in form tag -->
+
+    <form action="" method="post"  novalidate> 
+        {% csrf_token %} 
+            <table>
+                {{form.as_table}}
+            </table>
+        <input type="submit"value="Submit"> 
+    </form>
+</body>
+</html>

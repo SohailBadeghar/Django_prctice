@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login&logout Form </title>
+    <style>
+        .errors{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {% if forms.non_field_errors %}
+            {% for error in forms.non_field_errors %}
+                <p class="error">{{error}}</p>
+            {% endfor %}
+        {% endif %}
+        {% for fm in forms %}
+            {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+        {% endfor %}
+        <input type="submit" value="Sign up">
+    </form>
+    {% if messages %}
+    {% for msg in messages %}
+        <small {% if msg.tags %}Class="{{ msg.tags }}" {% endif %}> {{msg}} </small>
+    {% endfor %}
+    {% endif %} <br> <br>
+   <button><a href="{% url 'login' %}"> Go to Login page </a></button> 
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,td {
+            border: 2px solid black
+        }
+    </style>
+</head>
+<body>
+    <div>
+    {% if mt %}
+        <h1>Musician Details</h1>
+
+        <table>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Instrument</th>
+            </tr>
+        {% for i in mt %}
+        <tr>
+            <td>{{i.first_name}}</td>
+            <td>{{i.last_name}}</td>
+            <td>{{i.instrument}}</td>
+        </tr>
+        {% endfor %} 
+        </table>
+    {% else  %}
+            <h1>No Data </h1>
+            
+    {% endif %}
+    </div>
+
+    <div>
+    {% if at %}
+        <h1>Albums Details</h1>
+
+        <table>
+            <tr>
+                <th>Artist</th>
+                <th>Artist Name</th>
+                <th>ReleasedateAlbum</th>
+                <th>NumStars</th>
+            </tr>
+        {% for alb in at %}
+        <tr>
+            <td>{{alb.artist}}</td>
+            <td>{{alb.name}}</td>
+            <td>{{alb.release_date}}</td>
+            <td>{{alb.num_stars}}</td>
+        </tr>
+        {% endfor %} 
+        </table>
+    {% else  %}
+            <h1>No Data </h1>
+    {% endif %}
+    </div>
+</body>
+</html>
